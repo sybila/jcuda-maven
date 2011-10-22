@@ -29,7 +29,7 @@
             </roles>
         </developer>
     </developers>    
-    
+
     <modules>
         <module>externals</module>
         <module>jcuda</module>
