@@ -1,0 +1,20 @@
+<assembly>
+	<!-- Dependent projects will use this id as the classifier to match this assembly -->
+	<id>libs</id>
+<formats>
+<format>tar</format>
+	</formats>
+	<files>
+		<file>
+			<source>libexample.so</source>
+			<outputdirectory>lib</outputdirectory>
+			<filemode>0644</filemode>
+		</file>
+		<file>
+			<source>example.h</source>
+			<outputdirectory>include</outputdirectory>
+			<filemode>0644</filemode>
+		</file>
+	</files>
+</assembly>
+
