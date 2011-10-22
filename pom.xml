@@ -1,0 +1,56 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.jcuda</groupId>
+    <artifactId>aggregation</artifactId>
+    <version>0.4.0-beta1</version>
+    <packaging>pom</packaging>
+
+    <name>JCuda</name>
+    <description>Java bindings for CUDA</description>
+    <url>http://www.jcuda.org</url>
+ 
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>http://jcuda.org/License.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+ 
+    <developers>
+        <developer>
+            <name>Marco Hutter</name>
+            <email>jcuda@jcuda.org</email>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>    
+    
+    <modules>
+        <module>externals</module>
+        <module>jcuda</module>
+    </modules>
+
+    <distributionManagement>
+        <repository>
+            <id>sybila-maven-ssh</id>
+            <name>Maven repository hosted on Zimodej</name>
+            <url>scp://anna.fi.muni.cz:/srv/www/htdocs/sybila/public/maven</url>
+        </repository>
+    </distributionManagement>
+    
+    <build>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh</artifactId>
+                <version>1.0-beta-6</version>
+            </extension>
+        </extensions>
+    </build>
+
+</project>

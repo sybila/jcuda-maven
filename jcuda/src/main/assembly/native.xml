@@ -1,0 +1,21 @@
+
+<assembly>
+	<!-- Dependent projects will use this id as the classifier to match this assembly -->
+    <id>libs</id>
+    <formats>
+        <format>jar</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory> 
+    <fileSets>
+        <fileSet>
+            <outputDirectory>lib</outputDirectory> 
+            <directory>src/main/lib</directory>
+            <includes>
+                <include>*.so</include>
+                <include>*.dll</include>
+                <include>*.dylib</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+</assembly>
+
