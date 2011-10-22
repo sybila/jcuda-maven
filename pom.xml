@@ -8,7 +8,7 @@
     <version>0.4.0-beta1</version>
     <packaging>pom</packaging>
 
-    <name>JCuda</name>
+    <name>aggregation</name>
     <description>Java bindings for CUDA</description>
     <url>http://www.jcuda.org</url>
  
@@ -33,6 +33,7 @@
     <modules>
         <module>externals</module>
         <module>jcuda</module>
+        <module>utils</module>
     </modules>
 
     <distributionManagement>

@@ -1,0 +1,80 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.jcuda</groupId>
+    <artifactId>utils</artifactId>
+    <version>0.0.3</version>
+    <packaging>jar</packaging>
+     
+    <parent>
+        <groupId>org.jcuda</groupId>
+        <artifactId>aggregation</artifactId>
+        <version>0.4.0-beta1</version>
+    </parent>
+    
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>http://jocl.org/downloads/LICENSE.TXT</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    
+    <properties>
+        <skipTests>true</skipTests>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <configuration>
+                    <groupId>org.jcuda</groupId>
+                    <version>${project.version}</version>
+                    <packaging>jar</packaging>
+                    <url>scp://anna.fi.muni.cz:/srv/www/htdocs/sybila/public/maven</url>
+                    <repositoryId>sybila-maven-ssh</repositoryId>                    
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>deploy-library-utils</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>deploy-file</goal>
+                        </goals>
+                        <configuration>
+                            <artifactId>utils</artifactId>
+                            <file>src/main/external-files/jcudaUtils-${project.version}.jar</file>
+                        </configuration>
+                    </execution>                    
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-install-plugin</artifactId>
+                <configuration>
+                    <groupId>org.jcuda.externals</groupId>
+                    <version>${project.version}</version>
+                    <packaging>jar</packaging>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>install-library-utils</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>install-file</goal>
+                        </goals>  
+                        <configuration>
+                            <artifactId>utils</artifactId>
+                            <file>src/main/external-files/jcudaUtils-${project.version}.jar</file>
+                        </configuration>
+                    </execution>                                    
+                </executions>
+            </plugin>
+        </plugins>
+    </build>    
+    
+</project>
